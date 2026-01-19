@@ -1,0 +1,2038 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adrien Stagnara - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Primitive Color Tokens */
+      --color-white: rgba(255, 255, 255, 1);
+      --color-black: rgba(0, 0, 0, 1);
+      --color-cream-50: rgba(252, 252, 249, 1);
+      --color-cream-100: rgba(255, 255, 253, 1);
+      --color-gray-200: rgba(245, 245, 245, 1);
+      --color-gray-300: rgba(167, 169, 169, 1);
+      --color-gray-400: rgba(119, 124, 124, 1);
+      --color-slate-500: rgba(98, 108, 113, 1);
+      --color-brown-600: rgba(94, 82, 64, 1);
+      --color-charcoal-700: rgba(31, 33, 33, 1);
+      --color-charcoal-800: rgba(38, 40, 40, 1);
+      --color-slate-900: rgba(19, 52, 59, 1);
+      --color-teal-300: rgba(50, 184, 198, 1);
+      --color-teal-400: rgba(45, 166, 178, 1);
+      --color-teal-500: rgba(33, 128, 141, 1);
+      --color-teal-600: rgba(29, 116, 128, 1);
+      --color-teal-700: rgba(26, 104, 115, 1);
+      --color-teal-800: rgba(41, 150, 161, 1);
+      --color-red-400: rgba(255, 84, 89, 1);
+      --color-red-500: rgba(192, 21, 47, 1);
+      --color-orange-400: rgba(230, 129, 97, 1);
+      --color-orange-500: rgba(168, 75, 47, 1);
+
+      /* RGB versions for opacity control */
+      --color-brown-600-rgb: 94, 82, 64;
+      --color-teal-500-rgb: 33, 128, 141;
+      --color-slate-900-rgb: 19, 52, 59;
+      --color-slate-500-rgb: 98, 108, 113;
+      --color-red-500-rgb: 192, 21, 47;
+      --color-red-400-rgb: 255, 84, 89;
+      --color-orange-500-rgb: 168, 75, 47;
+      --color-orange-400-rgb: 230, 129, 97;
+
+      /* Background color tokens (Light Mode) */
+      --color-bg-1: rgba(59, 130, 246, 0.08);
+      --color-bg-2: rgba(245, 158, 11, 0.08);
+      --color-bg-3: rgba(34, 197, 94, 0.08);
+      --color-bg-4: rgba(239, 68, 68, 0.08);
+      --color-bg-5: rgba(147, 51, 234, 0.08);
+      --color-bg-6: rgba(249, 115, 22, 0.08);
+      --color-bg-7: rgba(236, 72, 153, 0.08);
+      --color-bg-8: rgba(6, 182, 212, 0.08);
+
+      /* Semantic Color Tokens (Light Mode) */
+      --color-background: var(--color-cream-50);
+      --color-surface: var(--color-cream-100);
+      --color-text: var(--color-slate-900);
+      --color-text-secondary: var(--color-slate-500);
+      --color-primary: var(--color-teal-500);
+      --color-primary-hover: var(--color-teal-600);
+      --color-primary-active: var(--color-teal-700);
+      --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+      --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+      --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+      --color-btn-primary-text: var(--color-cream-50);
+      --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+      --color-error: var(--color-red-500);
+      --color-success: var(--color-teal-500);
+      --color-warning: var(--color-orange-500);
+      --color-info: var(--color-slate-500);
+      --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+      --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+      /* Common style patterns */
+      --focus-ring: 0 0 0 3px var(--color-focus-ring);
+      --focus-outline: 2px solid var(--color-primary);
+      --status-bg-opacity: 0.15;
+      --status-border-opacity: 0.25;
+
+      /* Typography */
+      --font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-size-xs: 11px;
+      --font-size-sm: 12px;
+      --font-size-base: 14px;
+      --font-size-md: 14px;
+      --font-size-lg: 16px;
+      --font-size-xl: 18px;
+      --font-size-2xl: 20px;
+      --font-size-3xl: 24px;
+      --font-size-4xl: 30px;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 550;
+      --font-weight-bold: 600;
+      --line-height-tight: 1.2;
+      --line-height-normal: 1.5;
+      --letter-spacing-tight: -0.01em;
+
+      /* Spacing */
+      --space-0: 0;
+      --space-1: 1px;
+      --space-2: 2px;
+      --space-4: 4px;
+      --space-6: 6px;
+      --space-8: 8px;
+      --space-10: 10px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+
+      /* Border Radius */
+      --radius-sm: 6px;
+      --radius-base: 8px;
+      --radius-md: 10px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+
+      /* Animation */
+      --duration-fast: 150ms;
+      --duration-normal: 250ms;
+      --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* Custom Portfolio Colors - Professional palette */
+      --navy-blue: #1a2844;
+      --light-blue: #0088cc;
+      --accent-orange: #ff6b35;
+
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-gray-400-rgb: 119, 124, 124;
+        --color-teal-300-rgb: 50, 184, 198;
+        --color-gray-300-rgb: 167, 169, 169;
+        --color-gray-200-rgb: 245, 245, 245;
+        --color-background: var(--color-charcoal-700);
+        --color-surface: var(--color-charcoal-800);
+        --color-text: var(--color-gray-200);
+        --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+        --color-primary: var(--color-teal-300);
+        --color-primary-hover: var(--color-teal-400);
+        --color-primary-active: var(--color-teal-800);
+        --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+        --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+        --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+        --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+        --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+        --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+        --color-btn-primary-text: var(--color-slate-900);
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-family-base);
+    }
+
+    .footer-signature {
+      margin-top: var(--space-16);
+      text-align: left;
+      /* ou right selon préférence */
+    }
+
+    .footer-signature img {
+      max-width: 200px;
+      /* ajuste selon ton image */
+      height: auto;
+      display: inline-block;
+    }
+
+
+
+    body {
+      font-family: var(--font-family-base);
+      line-height: var(--line-height-normal);
+      color: var(--color-text);
+      background-color: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+      z-index: 1000;
+      border-bottom: 1px solid var(--color-card-border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-16) var(--space-24);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      text-decoration: none;
+      letter-spacing: var(--letter-spacing-tight);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: var(--space-32);
+      list-style: none;
+    }
+
+
+    .nav-link {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-size-base);
+      transition: color var(--duration-normal) var(--ease-standard);
+      padding: var(--space-8);
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-link.active {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    /* Page Styles */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 70px;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(26, 40, 68, 0.45), rgba(26, 40, 68, 0.45)), url('Fond.png');
+      background-size: cover;
+      background-position: center;
+      color: var(--color-white);
+      padding: var(--space-32) var(--space-24);
+    }
+
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-32);
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-contact {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-lg);
+      padding: var(--space-24);
+      min-width: 280px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-contact h3 {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-white);
+      margin-bottom: var(--space-16);
+      text-align: center;
+    }
+
+    .contact-item-hero {
+      display: flex;
+      align-items: center;
+      gap: var(--space-12);
+      margin-bottom: var(--space-16);
+      padding: var(--space-12);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-base);
+      transition: all var(--duration-normal) var(--ease-standard);
+    }
+
+    .contact-item-hero:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(4px);
+    }
+
+    .contact-item-hero:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon-hero {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-item-hero a {
+      color: var(--color-white);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      word-break: break-word;
+      transition: opacity var(--duration-fast) var(--ease-standard);
+    }
+
+    .contact-item-hero a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-20);
+      letter-spacing: var(--letter-spacing-tight);
+    }
+
+    .hero h2 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--space-20);
+      opacity: 0.95;
+      line-height: 1.4;
+    }
+
+    .hero p {
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--space-32);
+      opacity: 0.9;
+      line-height: 1.7;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--color-white);
+      color: var(--navy-blue);
+      padding: var(--space-16) var(--space-32);
+      border-radius: var(--radius-base);
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-lg);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px var(--space-24);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Quick Overview Cards */
+    .overview-section {
+      background: var(--color-background);
+      padding: 60px var(--space-24);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-24);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .overview-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-32);
+      text-align: center;
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-md);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .overview-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .overview-icon {
+      font-size: 48px;
+      margin-bottom: var(--space-16);
+    }
+
+    .overview-label {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-8);
+    }
+
+    .overview-value {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .overview-subvalue {
+      font-size: var(--font-size-base);
+      color: var(--color-text);
+      font-weight: var(--font-weight-medium);
+    }
+
+    /* Passions Section */
+    .passions-section {
+      background: var(--color-background);
+      padding: 60px var(--space-24);
+    }
+
+    .passions-divider {
+      text-align: center;
+      color: var(--color-primary);
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--space-32);
+      opacity: 0.6;
+    }
+
+    .passions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-24);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .passion-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-32);
+      text-align: center;
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .passion-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .passion-icon {
+      font-size: 40px;
+      margin-bottom: var(--space-16);
+    }
+
+    .passion-title {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--space-16);
+    }
+
+    .passion-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .passion-list li {
+      padding: var(--space-6) 0;
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .passion-brief {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .passion-description {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--space-32);
+      text-align: center;
+      letter-spacing: var(--letter-spacing-tight);
+    }
+
+    /* About Section */
+    #about {
+      background-color: var(--color-background);
+    }
+
+    /* Passion Aéro Section */
+    #passion-aero {
+      background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+      position: relative;
+    }
+
+    #passion-aero .section-title {
+      color: var(--navy-blue);
+    }
+
+    .passion-subtitle {
+      text-align: center;
+      font-size: var(--font-size-xl);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-32);
+      font-weight: var(--font-weight-medium);
+      font-style: italic;
+    }
+
+    .aero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-24);
+      margin-bottom: var(--space-32);
+    }
+
+    .aero-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-24);
+      border: 2px solid var(--accent-orange);
+      box-shadow: var(--shadow-md);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .aero-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 107, 53, 0.2);
+    }
+
+    .aero-card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-12);
+      margin-bottom: var(--space-16);
+    }
+
+    .aero-icon {
+      font-size: 32px;
+    }
+
+    .aero-card h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--navy-blue);
+      margin: 0;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background: var(--accent-orange);
+      color: var(--color-white);
+      padding: var(--space-4) var(--space-12);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-12);
+    }
+
+    .aero-description {
+      font-size: var(--font-size-base);
+      line-height: 1.7;
+      color: var(--color-text);
+      margin-bottom: var(--space-16);
+    }
+
+    .aero-highlight {
+      background: var(--color-bg-6);
+      padding: var(--space-12);
+      border-radius: var(--radius-base);
+      border-left: 4px solid var(--accent-orange);
+      margin-bottom: var(--space-16);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text);
+    }
+
+    .aero-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: var(--space-16);
+    }
+
+    .aero-features li {
+      padding: var(--space-8) 0;
+      padding-left: var(--space-24);
+      position: relative;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .aero-features li:before {
+      content: "✈";
+      position: absolute;
+      left: 0;
+      color: var(--accent-orange);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .aero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      margin-top: var(--space-16);
+    }
+
+    .aero-tag {
+      background: linear-gradient(135deg, var(--navy-blue) 0%, var(--light-blue) 100%);
+      color: var(--color-white);
+      padding: var(--space-6) var(--space-12);
+      border-radius: var(--radius-base);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .collins-highlight {
+      background: linear-gradient(135deg, var(--navy-blue) 0%, var(--light-blue) 100%);
+      color: var(--color-white);
+      padding: var(--space-32);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-32);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .collins-highlight h3 {
+      color: var(--color-white);
+      font-size: var(--font-size-3xl);
+      margin-bottom: var(--space-16);
+    }
+
+    .collins-highlight p {
+      font-size: var(--font-size-lg);
+      line-height: 1.7;
+      margin-bottom: var(--space-16);
+      opacity: 0.95;
+    }
+
+    .project-large {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-32);
+      border: 2px solid var(--accent-orange);
+      box-shadow: var(--shadow-lg);
+      margin-top: var(--space-32);
+    }
+
+    .project-large h3 {
+      font-size: var(--font-size-3xl);
+      color: var(--navy-blue);
+      margin-bottom: var(--space-16);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-16);
+      margin: var(--space-24) 0;
+    }
+
+    .spec-card {
+      background: var(--color-bg-1);
+      padding: var(--space-16);
+      border-radius: var(--radius-base);
+      border: 1px solid var(--color-card-border);
+    }
+
+    .spec-card h4 {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
+      color: var(--navy-blue);
+      margin-bottom: var(--space-8);
+    }
+
+    .spec-card p {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .about-intro {
+      font-size: var(--font-size-xl);
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: var(--space-32);
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-24);
+      margin-bottom: var(--space-32);
+    }
+
+    .about-card {
+      background: var(--color-surface);
+      padding: var(--space-24);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-card h3 {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-12);
+    }
+
+    .about-card p {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .interests {
+      text-align: center;
+      margin-top: var(--space-32);
+    }
+
+    .interests h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-16);
+      color: var(--color-text);
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12);
+      justify-content: center;
+    }
+
+    .tag {
+      background: var(--color-bg-1);
+      padding: var(--space-8) var(--space-16);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text);
+      border: 1px solid var(--color-card-border);
+    }
+
+    .cv-download {
+      text-align: center;
+      margin-top: var(--space-32);
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: var(--color-primary);
+      color: var(--color-btn-primary-text);
+      padding: var(--space-12) var(--space-24);
+      border-radius: var(--radius-base);
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      transition: background var(--duration-normal) var(--ease-standard);
+    }
+
+    .btn-download:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .project-body .status-badge {
+      display: inline-block;
+      margin-bottom: 15px;
+      /* espace sous le badge */
+    }
+
+    .project-body .project-description {
+      margin-bottom: 15px;
+      /* espace sous le texte */
+    }
+
+    /* Experiences Section */
+    #experiences {
+      background-color: var(--color-bg-1);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      background: var(--color-surface);
+      padding: var(--space-24);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-24);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .timeline-item:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-year {
+      display: inline-block;
+      background: var(--color-primary);
+      color: var(--color-btn-primary-text);
+      padding: var(--space-4) var(--space-12);
+      border-radius: var(--radius-base);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-12);
+    }
+
+    .timeline-item h3 {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--space-8);
+    }
+
+    .timeline-company {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-12);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .timeline-description {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Projects Section */
+    #projects {
+      background-color: var(--color-background);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-24);
+    }
+
+    .project-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-header {
+      background: linear-gradient(135deg, var(--navy-blue) 0%, var(--light-blue) 100%);
+      padding: var(--space-24);
+      color: var(--color-white);
+    }
+
+    .project-header h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-8);
+      color: var(--color-white);
+    }
+
+    .project-category {
+      font-size: var(--font-size-sm);
+      opacity: 0.9;
+    }
+
+    .project-body {
+      padding: var(--space-24);
+    }
+
+
+
+    .project-description {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--space-16);
+    }
+
+    .project-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+
+    .skill-tag {
+      background: var(--color-bg-2);
+      padding: var(--space-4) var(--space-12);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      color: var(--color-text);
+      border: 1px solid var(--color-card-border);
+    }
+
+    .btn-project {
+      display: inline-block;
+      background: var(--color-secondary);
+      color: var(--color-text);
+      padding: var(--space-8) var(--space-16);
+      border-radius: var(--radius-base);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      transition: background var(--duration-normal) var(--ease-standard);
+    }
+
+    .btn-project:hover {
+      background: var(--color-secondary-hover);
+    }
+
+    /* Skills Section */
+    #skills {
+      background-color: var(--color-bg-3);
+    }
+
+    .skills-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .skills-category {
+      margin-bottom: var(--space-32);
+    }
+
+    .skills-category h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--space-16);
+      text-align: center;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-12);
+      justify-content: center;
+    }
+
+    .skill-badge {
+      background: var(--color-surface);
+      padding: var(--space-12) var(--space-20);
+      border-radius: var(--radius-base);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-xs);
+      transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+    }
+
+    .skill-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: var(--color-background);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-32);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      background: var(--color-surface);
+      padding: var(--space-32);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-info h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--space-24);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-12);
+      margin-bottom: var(--space-16);
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--color-primary);
+    }
+
+    .contact-form {
+      background: var(--color-surface);
+      padding: var(--space-32);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--space-24);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-20);
+    }
+
+    .form-label {
+      display: block;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text);
+      margin-bottom: var(--space-8);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: var(--space-12);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-base);
+      font-size: var(--font-size-base);
+      font-family: var(--font-family-base);
+      background: var(--color-background);
+      color: var(--color-text);
+      transition: border-color var(--duration-fast) var(--ease-standard);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: var(--focus-ring);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--color-primary);
+      color: var(--color-btn-primary-text);
+      padding: var(--space-12) var(--space-24);
+      border: none;
+      border-radius: var(--radius-base);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
+      cursor: pointer;
+      transition: background var(--duration-normal) var(--ease-standard);
+    }
+
+    .btn-submit:hover {
+      background: var(--color-primary-hover);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-card-border);
+      padding: var(--space-32) var(--space-24);
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-24);
+      margin-bottom: var(--space-16);
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      transition: color var(--duration-fast) var(--ease-standard);
+    }
+
+    .footer-link:hover {
+      color: var(--color-primary);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-16);
+      margin-bottom: var(--space-16);
+    }
+
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-secondary);
+      border-radius: var(--radius-full);
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: var(--font-weight-bold);
+      transition: background var(--duration-normal) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
+    }
+
+    .social-icon:hover {
+      background: var(--color-primary);
+      color: var(--color-btn-primary-text);
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    /* Photo Styles */
+    .profile-photo-section {
+      background: var(--color-surface);
+      padding: 40px var(--space-24);
+      text-align: center;
+      border-bottom: 1px solid var(--color-card-border);
+    }
+
+    .profile-photo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-32);
+      max-width: 900px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      border: 4px solid var(--color-primary);
+      box-shadow: var(--shadow-lg);
+      transition: transform var(--duration-normal) var(--ease-standard);
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-info {
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .profile-info h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--space-8);
+    }
+
+    .profile-info p {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .project-photo {
+      width: 100%;
+      border-radius: var(--radius-base);
+      margin: var(--space-16) 0;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--duration-normal) var(--ease-standard);
+      margin-bottom: 2px;
+    }
+
+    .project-photo:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .photo-caption {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      font-style: italic;
+      text-align: center;
+      margin-top: var(--space-8);
+      margin-top: 2px;
+    }
+
+    .aero-photo {
+      width: 100%;
+      border-radius: var(--radius-base);
+      margin: var(--space-16) 0;
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--accent-orange);
+      transition: transform var(--duration-normal) var(--ease-standard);
+    }
+
+    .aero-photo:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-menu {
+        gap: var(--space-16);
+      }
+
+      .hero-container {
+        flex-direction: column;
+      }
+
+      .hero-contact {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero h2 {
+        font-size: var(--font-size-lg);
+      }
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      section {
+        padding: 60px var(--space-16);
+      }
+
+      .about-grid,
+      .projects-grid,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-info {
+        text-align: center;
+      }
+
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-container {
+        flex-direction: column;
+        gap: var(--space-12);
+      }
+
+      .nav-menu {
+        flex-wrap: wrap;
+        gap: var(--space-12);
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+    }
+
+    /* Animation Scroll */
+    .fade-in-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Navigation -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="#" class="logo" data-page="accueil">
+        <img src="Capture d’écran 2025-12-24 à 10.49.53.png" style="height: 45px; display: block;">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link" data-page="accueil">Accueil</a></li>
+        <li><a href="#" class="nav-link" data-page="aeronautique">Aéronautique</a></li>
+        <li><a href="#" class="nav-link" data-page="projets">Projets</a></li>
+        <li><a href="#" class="nav-link" data-page="experiences">Expérience</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE 1: ACCUEIL -->
+  <div id="page-accueil" class="page active">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Adrien Stagnara</h1>
+          <h2>Étudiant en BUT GEII | Passionné d’aviation | Entrepreneur
+          </h2>
+          <a href="#" class="cta-button" data-page="aeronautique">Découvrir mon parcours</a>
+          <a href="https://adrien6731.github.io/SiteWeb/#accueil" class="cta-button">
+            Lire en anglais
+          </a>
+        </div>
+        <div class="hero-contact">
+          <h3>Contact</h3>
+          <div class="contact-item-hero">
+            <span class="contact-icon-hero">✉️</span>
+            <a href="mailto:adrien.stagnara@gmail.com">adrien.stagnara@gmail.com</a>
+          </div>
+          <div class="contact-item-hero">
+            <span class="contact-icon-hero">🔗</span>
+            <a href="https://www.linkedin.com/in/adrien-stagnara-076350251/" target="_blank">Profil Linkedin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Photo Section -->
+    <section class="profile-photo-section">
+      <div class="profile-photo-container">
+        <img src="Adrien.jpg" alt="Adrien Stagnara - Profile Photo" class="profile-photo">
+        <div class="profile-info">
+          <h3>Adrien Stagnara, 20 ans</h3>
+          <p><strong>Étudiant à l’IUT Paul Sabatier, Toulouse</strong></p>
+          <p style="margin-top: var(--space-12);">Passionné d’aéronautique depuis le lycée, je combine mes études en BUT
+            avec mon apprentissage chez Collins Aerospace. Mon objectif : faire de ma passion un fil conducteur dans
+            tous les aspects de ma vie — académique, professionnel et personnel.</p>
+          <p style="margin-top: var(--space-16);">Sur ce site portfolio, vous trouverez mes projets académiques et
+            personnels, mes compétences techniques ainsi que mes expériences professionnelles.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- Formation Section -->
+    <section class="passions-section" style="background: var(--color-bg-1);">
+      <h2 class="section-title">Parcours académique</h2>
+      <div class="passions-divider">✦</div>
+      <div class="timeline" style="max-width: 800px;">
+        <div class="timeline-item">
+          <span class="timeline-year">2024-2025</span>
+          <h3>BUT GEII</h3>
+          <p class="timeline-company">IUT Paul Sabatier - Toulouse</p>
+          <p class="timeline-description">
+            Bachelor Universitaire de Technologie en Génie Électrique et Informatique Industrielle, spécialisation :
+            Électronique et Systèmes Embarqués.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2023-2024</span>
+          <h3>Classe préparatoire PTSI</h3>
+          <p class="timeline-company">ICAM</p>
+          <p class="timeline-description">
+            Classe préparatoire intégrée. Formation en mathématiques, physique et sciences de l’ingénieur.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2023</span>
+          <h3>Baccalauréat général, avec mention</h3>
+          <p class="timeline-company">Lycée Saint Joseph La Salle - Toulouse</p>
+          <p class="timeline-description">
+            Baccalauréat général, avec mention. Délégué des élèves au conseil d’administration du lycée.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Passions Section -->
+    <section class="passions-section">
+      <h2 class="section-title">Mes Passions</h2>
+      <div class="passions-divider">✦</div>
+      <div class="passions-grid">
+        <div class="passion-card">
+          <div class="passion-icon">🏊</div>
+          <h3 class="passion-title">Sports</h3>
+          <ul class="passion-list">
+            <li>Natation</li>
+            <li>Course à pied</li>
+            <li>Boxe</li>
+            <li>Echec</li>
+
+          </ul>
+        </div>
+        <div class="passion-card">
+          <div class="passion-icon">🧑‍🚒</div>
+          <h3 class="passion-title">Secouriste</h3>
+          <p class="passion-brief">Formateur secouriste CSSB</p>
+          <p class="passion-description">Compagnie Secouriste Sainte Barbe</p>
+        </div>
+        <div class="passion-card">
+          <div class="passion-icon">✈️</div>
+          <h3 class="passion-title">Aviation</h3>
+          <p class="passion-brief">BIA, Radio Amateur, PPL en cours</p>
+          <p class="passion-description">Passionné d’aviation depuis le collège</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- End of PAGE 1: ACCUEIL -->
+
+  <!-- PAGE 2: L'AÉRONAUTIQUE ET MOI -->
+  <div id="page-aeronautique" class="page">
+    <section id="passion-aero" style="padding-top: 100px;">
+      <h2 class="section-title">L'aviation et Moi </h2>
+      <p class="passion-subtitle">D'une Passion à un projet</p>
+
+      <!-- Collins Aerospace Highlight -->
+      <div class="collins-highlight" style="margin-bottom: var(--space-32);">
+        <h3> Alternant chez Collins Aerospace</h3>
+        <p>
+          Expérience professionnelle chez Collins Aerospace, en tant qu’apprenti sur les systèmes VHF.
+        </p>
+        <p style="margin-top: var(--space-12);">
+          J’ai travaillé sur les systèmes VHF et découvert le monde de l’aéronautique à travers plusieurs services : la
+          division Surveillance (TCAS), la division SATCOM, la division VHF et la division Câblage. </p>
+      </div>
+
+      <!-- BIA Section -->
+      <div class="aero-card" style="margin-bottom: var(--space-32);">
+        <div class="aero-card-header">
+          <span class="aero-icon">🎓</span>
+          <h3>Certification BIA & Amateur Radio</h3>
+        </div>
+        <p class="aero-description">
+          J’ai obtenu le BIA au lycée, ce qui m’a permis de faire mes premiers pas dans le monde de l’aviation.
+          À la fin de ce programme, nous avons eu l’opportunité de voler pendant une heure sur un Aquila AT01 — une
+          expérience qui a vraiment confirmé ma passion.
+          De plus, j’ai obtenu ma licence de radioamateur, ce qui m’a permis de mener à bien mon projet personnel de
+          construction d’une antenne.
+        </p>
+      </div>
+
+
+
+      <div class="aero-grid">
+        <!-- Flight Simulator Project -->
+        <div class="aero-card">
+          <div class="aero-card-header">
+            <span class="aero-icon">🎮</span>
+            <h3>Simulateur de vol sur MFS</h3>
+          </div>
+          <p class="aero-description">
+            <img src="20230607_150627339_iOS.jpeg" alt="Mon Simulateur de Vol - Configuration complète"
+              class="aero-photo" style="border: none;">
+          <p class="photo-caption">⚙️ Mon installation de simulateur de vol : écran, commandes, interrupteurs/panneaux
+          </p>
+          <h4
+            style="font-size: var(--font-size-lg); margin-top: var(--space-16); margin-bottom: var(--space-12); color: var(--color-text);">
+            Configuration Hardware </h4>
+          <ul class="aero-features">
+            <li>Switch controller</li>
+            <li>Palonniers</li>
+            <li>Manette des gaz</li>
+            <li>Integration du Joycon </li>
+            <li>Stream Deck </li>
+          </ul>
+          <h4
+            style="font-size: var(--font-size-lg); margin-top: var(--space-16); margin-bottom: var(--space-12); color: var(--color-text);">
+            Configurations d’avion</h4>
+          <ul class="aero-features">
+            <li>Configuration principale : A320 – simulateur adapté pour l’AQUILA AT01</li>
+          </ul>
+          <div class="aero-tags">
+            <span class="aero-tag">MFS</span>
+            <span class="aero-tag">AQUILA AT01</span>
+          </div>
+        </div>
+
+        <!-- PPL Preparation -->
+        <div class="aero-card">
+          <div class="aero-card-header">
+            <span class="aero-icon">✈️</span>
+            <h3>Formation PPL</h3>
+          </div>
+          <span class="status-badge">In Progress</span>
+          <p class="aero-description">
+            Je prépare actuellement ma Licence de Pilote Privé, en combinant la pratique de vol avec un apprentissage
+            théorique approfondi. Les connaissances et compétences acquises lors de mon apprentissage chez Collins
+            Aerospace complètent parfaitement ma formation de pilote, me permettant de mieux comprendre l’avion.
+          </p>
+          <img src="20230603_191941917_iOS.jpeg" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+          <p class="photo-caption">✈️ Vue cockpit de l’AQUILA AT01</p>
+
+
+
+
+          <div class="project-large"
+            style="border: 3px solid #1E90FF; padding: 20px; border-radius: 12px; color: inherit;">
+            <h3>⚙️ Système drone avec boîte noire miniaturisée</h3>
+
+            <p class="aero-description">
+              Projet de conception d’un système complet de drone incluant une boîte noire aéronautique miniaturisée avec
+              transmission de données sans fil en temps réel. Architecture à double ESP32 pour l’acquisition des données
+              à bord et l’affichage au sol.
+
+            </p>
+            <img src="Drone.png" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+
+
+            <a href="#" class="nav-link" data-page="projets"
+              style="display: inline-block; margin-top: 12px; padding: 10px 16px; background-color: #1E90FF; color: white; font-weight: bold; border-radius: 8px; text-decoration: none;">
+              En savoir plus
+            </a>
+          </div>
+    </section>
+  </div>
+
+  <!-- End of PAGE 2: AÉRONAUTIQUE -->
+
+  <!-- PAGE 3: PROJETS -->
+  <div id="page-projets" class="page">
+    <section id="projects-page" style="padding-top: 100px; background-color: var(--color-background);">
+      <h2 class="section-title">Mes Projets </h2>
+
+      <div class="projects-grid">
+
+
+
+        <!-- Projet 2: SmartCar -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Véhicule autonome</h3>
+            <p class="project-category">Projet BUT/ICAM</p>
+          </div>
+          <div class="project-body">
+            <span class="status-badge" style="background: var(--color-success);">Terminé</span>
+            <p class="project-description">
+              Projet de véhicule autonome intégrant électronique embarquée et développement logiciel.
+              Conception, simulation et tests unitaires du PCB avec Proteus, suivis du développement du logiciel de
+              contrôle dans VS Code pour la gestion des capteurs, le pilotage des moteurs et la fonctionnalité de suivi
+              de ligne.
+            </p>
+            <span class="skill-tag">Proteus</span>
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">Systèmes embarqués</span>
+            <div class="project-skills">
+              <img src="Car.png" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+              <p class="photo-caption">Vue de la SmartCar avec capteurs et PCB intégrés</p>
+
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 3: Station de Triage -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Station de tri automatisé de pièces </h3>
+            <p class="project-category">Projet IUT S3 </p>
+          </div>
+          <div class="project-body">
+            <span class="status-badge" style="background: var(--color-success);">Terminé</span>
+            <p class="project-description">
+              Projet d’automatisation industrielle : conception et programmation d’une station de tri de pièces avec
+              interface homme-machine (IHM).
+              Mise en œuvre avec Vijeo Designer, Control Expert, programmation en Ladder et supervision en temps réel.
+            </p>
+            <div class="project-skills">
+              <span class="skill-tag">Ladder</span>
+              <span class="skill-tag">Vijeo</span>
+              <span class="skill-tag">IHM</span>
+            </div>
+            <br><br>
+
+            <img src="IHM.jpeg" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+            <p class="photo-caption">⚙️ Vue de la station</p>
+
+
+          </div>
+        </div>
+
+        <!-- Projet 4: Système Stabilisateur Giroscopique -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Système de stabilisation gyroscopique</h3>
+            <p class="project-category">Projet IUT S4 </p>
+          </div>
+          <div class="project-body">
+            <span class="status-badge" style="background: var(--color-success);">Terminé </span>
+            <p class="project-description">
+              Projet utilisant une communication ESP-NOW.
+              D’un côté : le système piloté avec un gyroscope et 2 servos (2 axes).
+              De l’autre : un contrôleur ESP avec un gyroscope pour commander le système.
+              L’ensemble permet de stabiliser le système tout en suivant les mouvements de la tête.
+            </p>
+            <div class="project-skills">
+              <span class="skill-tag">BMI 160</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Systèmes embarqués</span>
+              <span class="skill-tag">Intégration de capteurs</span>
+              <span class="skill-tag">IoT</span>
+            </div>
+            <img src="IMG_0477.jpeg" alt="Système Stabilisateur Giroscopique" class="project-photo">
+            <p class="photo-caption">⚙️ Système complet : BMI 160, 2× ESP32, servos</p>
+
+
+          </div>
+        </div>
+
+        <!-- Projet 5: Boîte Noire -->
+        <div class="project-card">
+          <div class="project-header" style="background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);">
+            <h3>Boîte noire aéronautique </h3>
+            <p class="project-category">Projet personnel</p>
+          </div>
+          <div class="project-body">
+            <span class="status-badge" style="background: #FF8C00;">Terminé </span>
+            <p class="project-description">
+              Boîte noire aéronautique miniaturisée inspirée des enregistreurs de vol d’avion.
+              Le matériel comprend un accéléromètre (BMI160), un GPS (NEO7M), un capteur de pression, un LiDAR, un
+              module micro SD et un ESP32, permettant l’enregistrement local des données et leur transmission en
+              LoRa/VHF.
+            </p>
+            <p class="project-description">
+              Côté logiciel, le système utilise la formule de Haversine pour calculer les distances (en remplacement
+              d’un ADF/NDB), calcule la vitesse en combinant les données de l’accéléromètre et du GPS via un filtre de
+              Kalman, et intègre une surveillance TCAS basée sur le LiDAR.
+            </p>
+            <p class="project-description">
+              Le système de drone intègre le BMI160, ATX, NEO7M, micro SD et ESP32, tandis que le système pilote combine
+              un buzzer, un écran TFT, un ESP32 et le NEO7M pour le retour d’information et la visualisation.
+            </p>
+
+            <div class="project-skills">
+              <span class="skill-tag">SolidWorks</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Haversine</span>
+              <span class="skill-tag">Kalman</span>
+            </div>
+            <img src="IMG_0785.jpg" alt="Boîte Noire Aéronautique" class="project-photo" style="border: none;">
+            <p class="photo-caption">⚙️ Système complet : intégration pilote et drone</p>
+          </div>
+        </div>
+
+        <!-- Projet 6: Drone Complet -->
+        <div class="project-card">
+          <div class="project-header" style="background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);">
+            <h3>Système complet drone</h3>
+            <p class="project-category">Projet personnel</p>
+          </div>
+          <div class="project-body">
+            <span class="status-badge" style="background: #FF8C00;">En cours⏳</span>
+            <p class="project-description">
+              Développement d’un système complet de drone avec navigation autonome, acquisition de données longue portée
+              et traitement embarqué.
+              Suite des projets de boîte noire et de conception d’antenne.
+            </p>
+            <div class="project-skills">
+              <span class="skill-tag">ESP32</span>
+              <span class="skill-tag">Capteurs LiDAR</span>
+              <span class="skill-tag">LoRa / 4G </span>
+              <span class="skill-tag">Conception PCB</span>
+              <span class="skill-tag">App Mobile</span>
+
+              <img src="Cikad.png" alt="Système Drone Complet" class="project-photo" style="border: none;">
+              <img src="Drone.png" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 7: Antenne RX/TX -->
+        <div class="project-card">
+          <div class="project-header" style="background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);">
+            <h3>Conception d’antenne RX/TX</h3>
+            <p class="project-category">Projet personnel / Radioamateur</p>
+          </div>
+          <div class="project-body">
+            <span class="status-badge" style="background: #FF8C00;">En cours ⏳</span>
+            <p class="project-description">
+              Conception et optimisation d’une antenne RX/TX dans le cadre de la licence de radioamateur.
+              Optimisation des performances de transmission et de réception du signal.
+            </p>
+            <div class="project-skills">
+              <span class="skill-tag">Radio Amateur</span>
+              <span class="skill-tag">ActInSpace</span>
+              <span class="skill-tag">Conception RF</span>
+              <span class="skill-tag">Analyse spectrale</span>
+              <span class="skill-tag">VNA</span>
+              <img src="images.jpeg" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+              <img src="Vna.PNG" alt="Formation PPL - Cockpit" class="aero-photo" style="border: none;">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  </div>
+  </section>
+  </div>
+  <!-- End of PAGE 3: PROJETS -->
+
+  <!-- PAGE 4: EXPÉRIENCES PROFESSIONNELLES -->
+  <div id="page-experiences" class="page">
+    <section id="experiences" style="padding-top: 100px;">
+      <h2 class="section-title">Mon parcours professionnel</h2>
+
+      <div class="timeline">
+
+        <!-- Entrepreneurial Experience -->
+        <div class="timeline-item" style="border: 2px solid var(--light-blue); background: var(--color-bg-6);">
+          <span class="timeline-year" style="background: var(--light-blue);">2024 - Actuel</span>
+          <h3>Co-Founder – ECKHO</h3>
+          <p class="timeline-company">Projet entrepreneurial</p>
+          <p class="timeline-description">
+            Co-fondateur d’ECKHO, une marque d’intercoms pour moto combinant matériel électronique et application mobile
+            dédiée.
+            Ce projet inclut la conception produit, les systèmes embarqués et l’intégration logicielle.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+            <span class="skill-tag">Entrepreneuriat</span>
+            <span class="skill-tag">Conception de produit</span>
+            <span class="skill-tag">Systèmes embarqués</span>
+            <span class="skill-tag">Électronique</span>
+            <span class="skill-tag">App Mobile</span>
+          </div>
+        </div>
+
+        <!-- Collins Aerospace -->
+        <div class="timeline-item" style="border: 2px solid var(--light-blue); background: var(--color-bg-6);">
+          <span class="timeline-year" style="background: var(--light-blue);">2025 - Actuel</span>
+          <h3>Alternance VHF</h3>
+          <p class="timeline-company">Collins Aerospace - Toulouse</p>
+          <p class="timeline-description">
+            Travail sur les systèmes VHF (Very High Frequency), SATCOM et TCAS.
+            Participation aux tests et au dépannage des systèmes de communication VHF.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+            <span class="skill-tag">Normes aéronautiques</span>
+            <span class="skill-tag">Dépannage</span>
+            <span class="skill-tag">Travail d’équipe</span>
+            <span class="skill-tag">Tests &amp; Systèmes VHF</span>
+          </div>
+        </div>
+
+        <!-- Head Instructor -->
+        <div class="timeline-item" style="border: 2px solid var(--light-blue); background: var(--color-bg-6);">
+          <span class="timeline-year" style="background: var(--light-blue);">2019 - Actuel</span>
+          <h3>Formateur Secouriste depuis 6 ans</h3>
+          <p class="timeline-company">Compagnie Secouriste Sainte Barbe - Toulouse</p>
+          <p class="timeline-description">
+            Formateur pour jeunes sapeurs-pompiers, passionné par le secourisme,
+            tout en promouvant des valeurs telles que l’altruisme, l'efficience et la cohésion.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+            <span class="skill-tag">Leadership</span>
+            <span class="skill-tag">Mentoring</span>
+            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Altruisme</span>
+          </div>
+        </div>
+
+        <!-- CDI Sales Management -->
+        <div class="timeline-item">
+          <span class="timeline-year">2024-2025</span>
+          <h3>CDI - Gestion des ventes & service client</h3>
+          <p class="timeline-company">À la Boulangerie du Coin - Toulouse</p>
+          <p class="timeline-description">
+            Gestion des ventes, service client et entretien du magasin.
+            Développement de compétences en relation client, gestion des stocks et organisation du magasin.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+          </div>
+        </div>
+
+        <!-- CDD Refund Accounting -->
+        <div class="timeline-item">
+          <span class="timeline-year">2022-2023</span>
+          <h3>CDD - Comptabilité des remboursements</h3>
+          <p class="timeline-company">ERA Enchères - Lyon</p>
+          <p class="timeline-description">
+            Responsable de la comptabilité des remboursements, de la gestion des litiges clients, du service après-vente
+            et du dépannage/maintenance de divers produits.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+            <span class="skill-tag">Gestion des litiges</span>
+            <span class="skill-tag">SAV</span>
+          </div>
+        </div>
+
+        <!-- Internship – Radio Immersion -->
+        <div class="timeline-item">
+          <span class="timeline-year">2020</span>
+          <h3>Stage – Immersion radio</h3>
+          <p class="timeline-company">RCF (Radio) - Lyon</p>
+          <p class="timeline-description">
+            Stage immersif dans le domaine de la radio, avec découverte des métiers des médias et de la communication.
+            Participation à la production radiophonique et découverte des métiers de l’audiovisuel.
+          </p>
+        </div>
+
+        <!-- Internship – Claims Assessment -->
+        <div class="timeline-item">
+          <span class="timeline-year">2018</span>
+          <h3>Stage – Compagnie d'expertise de Sinistre</h3>
+          <p class="timeline-company">VRS Vering - Paris</p>
+          <p class="timeline-description">
+            Analyse des dossiers de réclamations d’assurance, en étudiant les circonstances, les causes et les
+            responsabilités.
+            Détection de fraudes, réalisation de réparations informatiques et de câblage internet. Première expérience
+            professionnelle technique.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+            <span class="skill-tag">Investigation</span>
+            <span class="skill-tag">Détection de Fraude </span>
+          </div>
+        </div>
+
+        <!-- Volunteer – Sorting and Repair -->
+        <div class="timeline-item">
+          <span class="timeline-year">2017</span>
+          <h3>Bénévole – Tri et réparationr</h3>
+          <p class="timeline-company">Association d’aide aux sans-abri - Caluire</p>
+          <p class="timeline-description">
+            Tri et test d’appareils électroniques pour une association caritative.
+            Réparation et remplacement du matériel défectueux.
+          </p>
+          <div class="project-skills" style="margin-top: var(--space-12);">
+            <span class="skill-tag">Réparation</span>
+            <span class="skill-tag">Maintenance</span>
+          </div>
+        </div>
+
+      </div> <!-- timeline -->
+    </section>
+  </div>
+
+  <!-- End of PAGE 4: EXPÉRIENCES -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#" class="footer-link" data-page="accueil">Accueil</a>
+        <a href="#" class="footer-link" data-page="aeronautique">Aéronautique</a>
+        <a href="#" class="footer-link" data-page="projets">Projets</a>
+        <a href="#" class="footer-link" data-page="experiences">Experience</a>
+      </div>
+
+      <div style="margin-top: var(--space-16); color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+        <p style="margin: 0;"><strong>Contact:</strong> adrien.stagnara@gmail.com</p>
+      </div>
+
+
+
+      <p class="copyright" style="margin-top: var(--space-16);">© 2026 Adrien Stagnara. Tous droits réservés.</p>
+
+    </div>
+  </footer>
+
+
+  <script>
+    // Page Navigation System
+    let currentPage = 'accueil';
+
+    function showPage(pageName) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+
+      // Show selected page
+      const pageToShow = document.getElementById('page-' + pageName);
+      if (pageToShow) {
+        pageToShow.classList.add('active');
+        currentPage = pageName;
+
+        // Update active navigation link
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-page') === pageName) {
+            link.classList.add('active');
+          }
+        });
+
+        // Update footer links
+        document.querySelectorAll('.footer-link').forEach(link => {
+          link.style.color = '';
+          if (link.getAttribute('data-page') === pageName) {
+            link.style.color = 'var(--color-primary)';
+          }
+        });
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Navigation link click handlers
+    document.querySelectorAll('[data-page]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const pageName = this.getAttribute('data-page');
+        if (pageName) {
+          showPage(pageName);
+        }
+      });
+    });
+
+    // Initialize - show home page by default
+    document.addEventListener('DOMContentLoaded', function () {
+      showPage('accueil');
+    });
+
+    // Handle browser back/forward
+    window.addEventListener('popstate', function (e) {
+      if (e.state && e.state.page) {
+        showPage(e.state.page);
+      }
+    });
+
+    // Update history when changing pages
+    const originalShowPage = showPage;
+    showPage = function (pageName) {
+      originalShowPage(pageName);
+      if (history.pushState) {
+        history.pushState({ page: pageName }, '', '#' + pageName);
+      }
+    };
+  </script>
+</body>
+
+</html>
